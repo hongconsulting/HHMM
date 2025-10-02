@@ -67,6 +67,6 @@ fit <- WH_reg_circlinear(theta, as.matrix(X))
 print(fit$coef)
 print(fit$SE)
 print(WH_rad_to_HHMM((fit$coef[2])))
-print(WH_rad_to_HHMM(2*atan(fit$coef[3])))
+print(WH_rad_to_dHHMM(2 * atan(fit$coef[3])))
 print(WH_CordeiroPaulaBotter(theta, X))
 ```

@@ -77,8 +77,8 @@ print(fit$SE)
 #> [1] 52.26269262  0.03086760  0.02219328
 print(WH_rad_to_HHMM((fit$coef[2])))
 #> [1] "01:30"
-print(WH_rad_to_HHMM(2*atan(fit$coef[3])))
-#> [1] "22:00"
+print(WH_rad_to_dHHMM(2 * atan(fit$coef[3])))
+#> [1] "−02:00"
 print(WH_CordeiroPaulaBotter(theta, X))
 #> [1] 0.002683716
 ```
