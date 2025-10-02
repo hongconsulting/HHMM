@@ -3,10 +3,10 @@
 .RData
 .Rhistory
 .Rcheck/
-.Rproj
 .Rproj.user/
 *.dll
 *.html
 *.o
+*.Rproj
 *.so
 *.tar.gz
