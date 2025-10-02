@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# WHCircular
+## WHCircular
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -12,7 +12,9 @@ performance(particularly by avoiding construction of large diagonal
 matrices), with additional functions for time-of-day variables in
 “HH:MM” format. ‘WH’ code is designed to maximise speed, for use in
 simulation studies. As such, input validation is minimal and the user is
-responsible for ensuring valid use. \## Installation
+responsible for ensuring valid use.
+
+## Installation
 
 You can install the development version of WHcircular from
 [GitHub](https://github.com/) with:
