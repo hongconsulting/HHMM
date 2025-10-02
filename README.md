@@ -7,12 +7,12 @@
 <!-- badges: end -->
 
 This package reimplements circular-linear regression and other selected
-functionality from the ‘circular’ package for improved
-performance(particularly by avoiding construction of large diagonal
-matrices), with additional functions for time-of-day variables in
-“HH:MM” format. ‘WH’ code is designed to maximise speed, for use in
-simulation studies. As such, input validation is minimal and the user is
-responsible for ensuring valid use.
+functionality from the ‘circular’ package for improved performance
+(particularly by avoiding construction of large diagonal matrices), with
+additional functions for time-of-day variables in “HH:MM” format. ‘WH’
+code is designed to maximise speed, for use in simulation studies. As
+such, input validation is minimal and the user is responsible for
+ensuring valid use.
 
 ## Installation
 
@@ -75,6 +75,10 @@ print(fit$coef)
 #> [1] 117.1153750   0.3926991  -0.2679492
 print(fit$SE)
 #> [1] 52.26269262  0.03086760  0.02219328
+print(WH_rad_to_HHMM((fit$coef[2])))
+#> [1] "01:30"
+print(WH_rad_to_HHMM(2*atan(fit$coef[3])))
+#> [1] "22:00"
 print(WH_CordeiroPaulaBotter(theta, X))
 #> [1] 0.002683716
 ```

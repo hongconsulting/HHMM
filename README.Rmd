@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package reimplements circular-linear regression and other selected functionality from the 'circular' package for improved performance(particularly by avoiding construction of large diagonal matrices), with additional functions for time-of-day variables in "HH:MM" format. 'WH' code is designed to maximise speed, for use in simulation studies. As such, input validation is minimal and the user is responsible for ensuring valid use.
+This package reimplements circular-linear regression and other selected functionality from the 'circular' package for improved performance (particularly by avoiding construction of large diagonal matrices), with additional functions for time-of-day variables in "HH:MM" format. 'WH' code is designed to maximise speed, for use in simulation studies. As such, input validation is minimal and the user is responsible for ensuring valid use.
 
 ## Installation
 
@@ -66,5 +66,7 @@ print(WH_rad_to_HHMM(WH_rad_sd(theta)))
 fit <- WH_reg_circlinear(theta, as.matrix(X))
 print(fit$coef)
 print(fit$SE)
+print(WH_rad_to_HHMM((fit$coef[2])))
+print(WH_rad_to_HHMM(2*atan(fit$coef[3])))
 print(WH_CordeiroPaulaBotter(theta, X))
 ```
