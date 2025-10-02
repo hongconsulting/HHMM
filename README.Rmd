@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# HHMM
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This package reimplements circular-linear regression and other selected functionality from the 'circular' package for improved performance(particularly by avoiding construction of large diagonal matrices), with additional functions for time-of-day variables in "HH:MM" format. 'WH' code is designed to maximise speed, for use in simulation studies. As such, input validation is minimal and the user is responsible for ensuring valid use.
+## Installation
+
+You can install the development version of WHcircular from [GitHub](https://github.com/) with:
+
+``` r
+remotes::install_github("hongconsulting/WHcircular")
+```
+
+## Example 1
+
+```{r example1}
+library(WHcircular)
+y <- c("01:00","01:15","01:30","01:45","02:00",
+       "23:00","23:15","23:30","23:45","00:00")
+X <- c(rep(0, 5), rep(1, 5))
+print(HHMM.mean(y))
+print(HHMM.lm(y, ~X))
+```
+
+## Example 2
+
+```{r example2}
+library(WHcircular)
+library(nycflights13)
+data <- nycflights13::flights
+y <- sprintf("%04d", data$sched_dep_time)
+y <- paste0(substr(y, 1, 2), ":", substr(y, 3, 4))
+print(HHMM.lm(y = y, X = ~as.factor(data$origin), name = c("EWR", "JFK", "LGA")))
+```
+
+## Example 3
+
+```{r example3}
+library(WHcircular)
+y <- c("01:00","01:15","01:30","01:45","02:00",
+       "23:00","23:15","23:30","23:45","00:00")
+X <- c(rep(0, 5), rep(1, 5))
+theta <- WH_HHMM_to_rad(y)
+print(WH_rad_to_HHMM(WH_rad_mean(theta)))
+print(WH_rad_to_HHMM(WH_rad_sd(theta)))
+fit <- WH_reg_circlinear(theta, as.matrix(X))
+print(fit$coef)
+print(fit$SE)
+print(WH_CordeiroPaulaBotter(theta, X))
+```

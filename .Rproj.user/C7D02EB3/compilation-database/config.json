@@ -1,0 +1,28 @@
+{
+    "args": [
+        "-std=gnu++17",
+        "-I/usr/share/R/include",
+        "-DNDEBUG",
+        "-I/mnt/c/Users/singu/OneDrive/HongConsulting/WHcircular/inst/include",
+        "-fpic",
+        "-fopenmp",
+        "-fopenacc",
+        "-std=c++20",
+        "-I/home/singularity/R/x86_64-pc-linux-gnu-library/4.5/Rcpp/include",
+        "-I/home/singularity/R/x86_64-pc-linux-gnu-library/4.5/RcppEigen/include",
+        "-DEIGEN_DONT_VECTORIZE",
+        "-I/usr/include/c++/13",
+        "-I/usr/include/x86_64-linux-gnu/c++/13",
+        "-I/usr/include/c++/13/backward",
+        "-I/usr/lib/gcc/x86_64-linux-gnu/13/include",
+        "-I/usr/local/include",
+        "-I/usr/include/x86_64-linux-gnu",
+        "-I/usr/include"
+    ],
+    "pch": "RcppEigen",
+    "is_cpp": true,
+    "hash": "175932031017594093391759415385",
+    "compiler": "9591782505921053015",
+    "rversion": "4.5.0",
+    "dbversion": 4
+}
