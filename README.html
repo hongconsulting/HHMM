@@ -630,17 +630,20 @@ responsible for ensuring valid use. ## Installation</p>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;(Intercept)&quot; &quot;01:30 (01:16 to 01:44)&quot;    &quot;&quot;       </span></span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;β1&quot;          &quot;−02:00 (−02:18 to −01:41)&quot; &quot;&lt; 0.001&quot;</span></span></code></pre></div>
 <h2 id="example-2">Example 2</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(WHcircular)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%04d&quot;</span>, data<span class="sc">$</span>sched_dep_time)</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">substr</span>(y, <span class="dv">1</span>, <span class="dv">2</span>), <span class="st">&quot;:&quot;</span>, <span class="fu">substr</span>(y, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">HHMM.lm</span>(<span class="at">y =</span> y, <span class="at">X =</span> <span class="sc">~</span><span class="fu">as.factor</span>(data<span class="sc">$</span>origin), <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;EWR&quot;</span>, <span class="st">&quot;JFK&quot;</span>, <span class="st">&quot;LGA&quot;</span>)))</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;      [,1]  [,2]                        [,3]     </span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;&quot;    &quot;Time (95%CI)&quot;              &quot;p&quot;      </span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;EWR&quot; &quot;13:25 (13:24 to 13:27)&quot;    &quot;&quot;       </span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;JFK&quot; &quot;01:07 (01:05 to 01:09)&quot;    &quot;&lt; 0.001&quot;</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; [4,] &quot;LGA&quot; &quot;−00:15 (−00:17 to −00:13)&quot; &quot;&lt; 0.001&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">requireNamespace</span>(<span class="st">&quot;nycflights13&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="fu">library</span>(WHcircular)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">library</span>(nycflights13)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  data <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%04d&quot;</span>, data<span class="sc">$</span>sched_dep_time)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">substr</span>(y, <span class="dv">1</span>, <span class="dv">2</span>), <span class="st">&quot;:&quot;</span>, <span class="fu">substr</span>(y, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">HHMM.lm</span>(<span class="at">y =</span> y, <span class="at">X =</span> <span class="sc">~</span><span class="fu">as.factor</span>(data<span class="sc">$</span>origin), </span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>                <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;EWR&quot;</span>, <span class="st">&quot;JFK&quot;</span>, <span class="st">&quot;LGA&quot;</span>)))</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>}</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;      [,1]  [,2]                        [,3]     </span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; [1,] &quot;&quot;    &quot;Time (95%CI)&quot;              &quot;p&quot;      </span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; [2,] &quot;EWR&quot; &quot;13:25 (13:24 to 13:27)&quot;    &quot;&quot;       </span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; [3,] &quot;JFK&quot; &quot;01:07 (01:05 to 01:09)&quot;    &quot;&lt; 0.001&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; [4,] &quot;LGA&quot; &quot;−00:15 (−00:17 to −00:13)&quot; &quot;&lt; 0.001&quot;</span></span></code></pre></div>
 <h2 id="example-3">Example 3</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(WHcircular)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;01:00&quot;</span>,<span class="st">&quot;01:15&quot;</span>,<span class="st">&quot;01:30&quot;</span>,<span class="st">&quot;01:45&quot;</span>,<span class="st">&quot;02:00&quot;</span>,</span>

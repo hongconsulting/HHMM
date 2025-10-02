@@ -12,18 +12,6 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// WH_pchisq
-double WH_pchisq(double x, double df);
-RcppExport SEXP _WHcircular_WH_pchisq(SEXP xSEXP, SEXP dfSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type df(dfSEXP);
-    rcpp_result_gen = Rcpp::wrap(WH_pchisq(x, df));
-    return rcpp_result_gen;
-END_RCPP
-}
 // WH_rad_kappa
 double WH_rad_kappa(const Eigen::VectorXd& theta);
 RcppExport SEXP _WHcircular_WH_rad_kappa(SEXP thetaSEXP) {
@@ -54,30 +42,6 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type theta(thetaSEXP);
     rcpp_result_gen = Rcpp::wrap(WH_rad_resultant(theta));
-    return rcpp_result_gen;
-END_RCPP
-}
-// WH_select_bool
-Eigen::VectorXd WH_select_bool(const Eigen::VectorXd& input, const Eigen::Array<bool, Eigen::Dynamic, 1>& mask);
-RcppExport SEXP _WHcircular_WH_select_bool(SEXP inputSEXP, SEXP maskSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Eigen::VectorXd& >::type input(inputSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Array<bool, Eigen::Dynamic, 1>& >::type mask(maskSEXP);
-    rcpp_result_gen = Rcpp::wrap(WH_select_bool(input, mask));
-    return rcpp_result_gen;
-END_RCPP
-}
-// WH_selectrow_bool
-Eigen::MatrixXd WH_selectrow_bool(const Eigen::MatrixXd& input, const Eigen::Array<bool, Eigen::Dynamic, 1>& mask);
-RcppExport SEXP _WHcircular_WH_selectrow_bool(SEXP inputSEXP, SEXP maskSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Eigen::MatrixXd& >::type input(inputSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Array<bool, Eigen::Dynamic, 1>& >::type mask(maskSEXP);
-    rcpp_result_gen = Rcpp::wrap(WH_selectrow_bool(input, mask));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -163,12 +127,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_WHcircular_WH_pchisq", (DL_FUNC) &_WHcircular_WH_pchisq, 2},
     {"_WHcircular_WH_rad_kappa", (DL_FUNC) &_WHcircular_WH_rad_kappa, 1},
     {"_WHcircular_WH_rad_mean", (DL_FUNC) &_WHcircular_WH_rad_mean, 1},
     {"_WHcircular_WH_rad_resultant", (DL_FUNC) &_WHcircular_WH_rad_resultant, 1},
-    {"_WHcircular_WH_select_bool", (DL_FUNC) &_WHcircular_WH_select_bool, 2},
-    {"_WHcircular_WH_selectrow_bool", (DL_FUNC) &_WHcircular_WH_selectrow_bool, 2},
     {"_WHcircular_WH_CordeiroPaulaBotter", (DL_FUNC) &_WHcircular_WH_CordeiroPaulaBotter, 2},
     {"_WHcircular_WH_HHMM_to_rad", (DL_FUNC) &_WHcircular_WH_HHMM_to_rad, 1},
     {"_WHcircular_WH_int_to_rad", (DL_FUNC) &_WHcircular_WH_int_to_rad, 1},

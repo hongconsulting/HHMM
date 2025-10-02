@@ -40,12 +40,15 @@ print(HHMM.lm(y, ~X))
 ## Example 2
 
 ``` r
-library(WHcircular)
-library(nycflights13)
-data <- nycflights13::flights
-y <- sprintf("%04d", data$sched_dep_time)
-y <- paste0(substr(y, 1, 2), ":", substr(y, 3, 4))
-print(HHMM.lm(y = y, X = ~as.factor(data$origin), name = c("EWR", "JFK", "LGA")))
+if (requireNamespace("nycflights13", quietly = TRUE)) {
+  library(WHcircular)
+  library(nycflights13)
+  data <- nycflights13::flights
+  y <- sprintf("%04d", data$sched_dep_time)
+  y <- paste0(substr(y, 1, 2), ":", substr(y, 3, 4))
+  print(HHMM.lm(y = y, X = ~as.factor(data$origin), 
+                name = c("EWR", "JFK", "LGA")))
+}
 #>      [,1]  [,2]                        [,3]     
 #> [1,] ""    "Time (95%CI)"              "p"      
 #> [2,] "EWR" "13:25 (13:24 to 13:27)"    ""       

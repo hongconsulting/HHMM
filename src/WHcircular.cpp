@@ -1,7 +1,6 @@
 // [[Rcpp::depends(RcppEigen)]]
 #include "WHcircular_types.h"
 
-#include "DisableStupidWarnings.h"
 #include <RcppEigen.h>
 #include "WH_distr_chisq.h"
 #include "WH_constexpr.h"

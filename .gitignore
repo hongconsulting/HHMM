@@ -1,0 +1,12 @@
+.DS_Store
+.Rbuildignore
+.RData
+.Rhistory
+.Rcheck/
+.Rproj
+.Rproj.user/
+*.dll
+*.html
+*.o
+*.so
+*.tar.gz

@@ -16,8 +16,9 @@ The circular mean in radians.
 Computes the circular mean of a vector of radians.
 }
 \examples{
-library(WH_circular)
-y <- WH_HHMM_to_rad(c("23:00","23:15","23:30","23:45","00:00",
-                    "01:00","01:15","01:30","01:45","02:00"))
-print(WH_rad_to_HHMM(WH_mean_rad(y)))
+y <- c("01:00","01:15","01:30","01:45","02:00",
+       "23:00","23:15","23:30","23:45","00:00")
+X <- c(rep(0, 5), rep(1, 5))
+theta <- WH_HHMM_to_rad(y)
+print(WH_rad_to_HHMM(WH_rad_sd(theta)))
 }
