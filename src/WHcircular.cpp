@@ -185,9 +185,9 @@ std::vector<std::string> WH_rad_to_HHMM(const Eigen::VectorXd &input) {
 //' @return A \code{WH_regfit} list with elements:
 //' \itemize{
 //'   \item \code{coef}: vector of estimated coefficients, ordered as
-//'         kappa, mu, and then betas.
+//'         κ, μ, \bold{β}.
 //'   \item \code{SE}: vector of estimated standard errors, ordered as
-//'         kappa, mu, and then betas.
+//'         κ, μ, \bold{β}.
 //'   \item \code{p}: \emph{p}-values of the betas.
 //'   \item \code{n}: sample size.
 //'   \item \code{loglik}: maximized log-likelihood.

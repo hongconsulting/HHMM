@@ -44,7 +44,7 @@ HHMM.mean <- function(x) {
 
 #' Circular-linear regression with "HH:MM" outcomes
 #'
-#' Fits a circular-linear regression\eqn{^{1}} model for time-of-day outcomes in
+#' Fits a circular-linear regression¹ model for time-of-day outcomes in
 #' "HH:MM" format.
 #' @param y String vector of times-of-day in "HH:MM" format.
 #' @param X.formula A model formula specifying the predictors.
@@ -58,11 +58,11 @@ HHMM.mean <- function(x) {
 #'   \item "Time (95%CI)": Parameter estimates and 95% confidence intervals
 #'   \item "p": \emph{P}-values
 #' }
-#' The \eqn{\mu} intercept is presented as a time-of-day whereas predictor coefficients
+#' The μ intercept is presented as a time-of-day whereas predictor coefficients
 #' are presented as signed time-of-day differences.
 #' @references
 #' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-#' \emph{Biometrics}, pp. 665\eqn{-}677.
+#' \emph{Biometrics}, pp. 665–677.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")
