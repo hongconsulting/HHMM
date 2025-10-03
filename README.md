@@ -8,7 +8,7 @@
 
 This package re-implements circular-linear regression and other selected
 functionality from the ‘circular’ package for improved performance,
-particularly by avoiding construction of $\O(n^2)$ diagonal matrices.
+particularly by avoiding construction of $O(n^2)$ diagonal matrices.
 Additional functions are provided for time-of-day variables in “HH:MM”
 format. ‘WH’ code is designed to maximize speed, for use in simulation
 studies. As such, input validation is minimal and the user is
