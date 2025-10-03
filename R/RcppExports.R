@@ -53,7 +53,7 @@ WH_rad_resultant <- function(theta) {
 #' @return \emph{P}-value of the test statistic.
 #' @references
 #' 1. Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved likelihood
-#' ratio tests for dispersion models. \emph{International Statistical Review}, pp. 257\eqn{-}274.
+#' ratio tests for dispersion models. \emph{International Statistical Review}, pp. 257–274.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")
@@ -128,7 +128,7 @@ WH_rad_to_HHMM <- function(input) {
 #' }
 #' @references
 #' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-#' \emph{Biometrics}, pp. 665\eqn{-}677.
+#' \emph{Biometrics}, pp. 665–677.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")

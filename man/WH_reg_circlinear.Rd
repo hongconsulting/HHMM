@@ -41,6 +41,6 @@ print(fit$SE)
 \references{
 \enumerate{
 \item Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-\emph{Biometrics}, pp. 665\eqn{-}677.
+\emph{Biometrics}, pp. 665–677.
 }
 }
