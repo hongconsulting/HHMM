@@ -19,7 +19,7 @@ double WH_A1(double k) {
 //' Circular ANOVA
 //'
 //' One-way analysis of variance for circular data in radians using the
-//' Cordeiro\eqn{-}Paula\eqn{-}Botter\eqn{^{1}} likelihood-ratio test.
+//' Cordeiro–Paula–Botter\eqn{^{1}} likelihood-ratio test.
 //' @param theta Numeric vector of radians.
 //' @param group Integer vector of group identifiers.
 //' @return \emph{P}-value of the test statistic.
