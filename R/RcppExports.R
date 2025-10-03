@@ -3,10 +3,10 @@
 
 #' Circular concentration
 #'
-#' Computes the von Mises concentration parameter \eqn{\kappa} of a vector
+#' Computes the von Mises concentration parameter κ of a vector
 #' of radians.
 #' @param theta Numeric vector of radians.
-#' @return The maximum likelihood estimate of \eqn{\kappa}.
+#' @return The maximum likelihood estimate of κ.
 #' @export
 WH_rad_kappa <- function(theta) {
     .Call(`_WHcircular_WH_rad_kappa`, theta)
