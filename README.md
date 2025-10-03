@@ -6,13 +6,13 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package reimplements circular-linear regression and other selected
-functionality from the ‘circular’ package for improved performance
-(particularly by avoiding construction of large diagonal matrices), with
-additional functions for time-of-day variables in “HH:MM” format. ‘WH’
-code is designed to maximise speed, for use in simulation studies. As
-such, input validation is minimal and the user is responsible for
-ensuring valid use.
+This package re-implements circular-linear regression and other selected
+functionality from the ‘circular’ package for improved performance,
+particularly by avoiding construction of $\mathit{O}(n^2)$ diagonal
+matrices. Additional functions are provided for time-of-day variables in
+“HH:MM” format. ‘WH’ code is designed to maximize speed, for use in
+simulation studies. As such, input validation is minimal and the user is
+responsible for ensuring valid use.
 
 ## Installation
 
@@ -82,3 +82,11 @@ print(WH_rad_to_dHHMM(2 * atan(fit$coef[3])))
 print(WH_CordeiroPaulaBotter(theta, X))
 #> [1] 0.002683716
 ```
+
+## Further Reading
+
+1.  Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved
+    likelihood ratio tests for dispersion models. *International
+    Statistical Review*, pp. 257–274.
+2.  Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular
+    response. *Biometrics*, pp. 665–677.

@@ -3,12 +3,13 @@ Title: Circular statistics
 Version: 0.5.0
 Authors@R: 
     person("Wei", "Hong", , "wei.hong@hongconsulting.ai", role = c("aut", "cre"))
-Description: This package reimplements circular-linear regression and other 
-    selected functionality from the 'circular' package for improved performance 
-    (particularly by avoiding construction of large diagonal matrices), with 
-    additional functions for time-of-day variables in "HH:MM" format. 'WH' code
-    is designed to maximise speed, for use in simulation studies. As such, input
-    validation is minimal and the user is responsible for ensuring valid use.
+Description: This package re-implements circular-linear regression and other 
+    selected functionality from the 'circular' package for improved performance, 
+    particularly by avoiding construction of O(n^2) diagonal matrices. 
+    Additional functions are provided for time-of-day variables in "HH:MM" 
+    format. 'WH' code is designed to maximise speed, for use in simulation 
+    studies. As such, input validation is minimal and the user is responsible 
+    for ensuring valid use.
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
