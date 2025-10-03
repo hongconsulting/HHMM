@@ -3,7 +3,7 @@
 .Rhistory
 .Rcheck/
 .Rproj.user/
-*.html
+README.html
 *.o
 *.Rproj
 *.so
