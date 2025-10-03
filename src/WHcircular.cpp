@@ -19,7 +19,7 @@ double WH_A1(double k) {
 //' Circular ANOVA
 //'
 //' One-way analysis of variance for circular data in radians using the
-//' Cordeiro–Paula–Botter\eqn{^{1}} likelihood-ratio test.
+//' Cordeiro–Paula–Botter¹ likelihood-ratio test.
 //' @param theta Numeric vector of radians.
 //' @param group Integer vector of group identifiers.
 //' @return \emph{P}-value of the test statistic.
@@ -178,10 +178,10 @@ std::vector<std::string> WH_rad_to_HHMM(const Eigen::VectorXd &input) {
 
 //' Circular-linear regression
 //'
-//' Fits a circular-linear regression\eqn{^{1}} model for outcomes in radians.
+//' Fits a circular-linear regression¹ model for outcomes in radians.
 //' @param y Numeric vector of radians.
 //' @param X Numeric matrix of predictors.
-//' @param tol Convergence tolerance. Default = \eqn{10^{-10}}.
+//' @param tol Convergence tolerance. Default = 10⁻¹⁰.
 //' @return A \code{WH_regfit} list with elements:
 //' \itemize{
 //'   \item \code{coef}: vector of estimated coefficients, ordered as

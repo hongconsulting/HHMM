@@ -19,7 +19,8 @@ Imports:
 Suggests:
     nycflights13,
     splines2
-URL: https://github.com/hongconsulting/WHcircular
+URL: https://github.com/hongconsulting/WHcircular,
+    https://hongconsulting.github.io/WHcircular,
 BugReports: https://github.com/hongconsulting/WHcircular/issues
 LinkingTo: 
     Rcpp,

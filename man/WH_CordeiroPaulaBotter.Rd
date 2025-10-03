@@ -16,7 +16,7 @@ WH_CordeiroPaulaBotter(theta, group)
 }
 \description{
 One-way analysis of variance for circular data in radians using the
-Cordeiro–Paula–Botter\eqn{^{1}} likelihood-ratio test.
+Cordeiro–Paula–Botter¹ likelihood-ratio test.
 }
 \examples{
 y <- c("01:00","01:15","01:30","01:45","02:00",

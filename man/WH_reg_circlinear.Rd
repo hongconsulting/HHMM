@@ -11,7 +11,7 @@ WH_reg_circlinear(y, X, tol = 1e-10)
 
 \item{X}{Numeric matrix of predictors.}
 
-\item{tol}{Convergence tolerance. Default = \eqn{10^{-10}}.}
+\item{tol}{Convergence tolerance. Default = 10⁻¹⁰.}
 }
 \value{
 A \code{WH_regfit} list with elements:
@@ -27,7 +27,7 @@ kappa, mu, and then betas.
 }
 }
 \description{
-Fits a circular-linear regression\eqn{^{1}} model for outcomes in radians.
+Fits a circular-linear regression¹ model for outcomes in radians.
 }
 \examples{
 y <- c("01:00","01:15","01:30","01:45","02:00",
